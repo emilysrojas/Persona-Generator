@@ -8,7 +8,9 @@ load_dotenv()
 
 def main():
     llm=OllamaLLM(model="llama3")
-    response = llm("What type of person is more likely to buy a red laptop? Give me an age, gender, and a reason why.")
+    product=input("What product are you trying to sell? ")
+    price=input("What is the price range of the product? ")
+    response = llm(f"What type of person is more likely to buy a {product} in the price range of {price}? Give me a name, age, gender, and a 50-80 word description of the person buying the product. Return in a json format, with no extra text.")
     print(response)
 
 
