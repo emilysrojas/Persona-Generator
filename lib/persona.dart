@@ -31,7 +31,22 @@ class MyApp extends StatelessWidget {
                   CircleAvatar(
                   radius: 64,
                   backgroundColor: Colors.blue,
-                  child: Icon(Icons.person, size: 50)
+                  child: ClipOval(
+                    child: Image.network(
+                      'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1000&auto=format&fit=crop',
+                      width: 128,
+                      height: 128,
+                      fit: BoxFit.cover,
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return const CircularProgressIndicator();
+                      },
+                      // This will show an error icon IF something actually goes wrong
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(Icons.broken_image, size: 50, color: Colors.red);
+                      },
+                    )
+                  ),
                   ),
                   SizedBox(height: height * .02,),
                   Text('Persona 1', style: TextStyle(
@@ -56,7 +71,14 @@ class MyApp extends StatelessWidget {
                   CircleAvatar(
                   radius: 64,
                   backgroundColor: Colors.blue,
-                 child: Icon(Icons.person, size: 50)
+                  child: ClipOval(
+                    child: Image.network(
+                      'https://images.unsplash.com/photo-1665934955885-769a0ecac39a?q=80&w=3638&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                      width: 128,
+                      height: 128,
+                      fit: BoxFit.cover,
+                    )
+                  ),
                   ),
                   SizedBox(height: height * .02,),
                   Text('Persona 2', style: TextStyle(
@@ -81,7 +103,22 @@ class MyApp extends StatelessWidget {
                   CircleAvatar(
                   radius: 64,
                   backgroundColor: Colors.blue,
-                  child: Icon(Icons.person, size: 50)
+                  child: ClipOval(
+                    child: Image.network(
+                      'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg',
+                      width: 128,
+                      height: 128,
+                      fit: BoxFit.cover,
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return const CircularProgressIndicator();
+                      },
+                      // This will show an error icon IF something actually goes wrong
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(Icons.broken_image, size: 50, color: Colors.red);
+                      },
+                    )
+                  ),
                   ),
                   SizedBox(height: height * .02,),
                   Text('Persona 3', style: TextStyle(
