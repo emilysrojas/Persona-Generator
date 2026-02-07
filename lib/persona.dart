@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
                   SizedBox(height: height * .13,),
                   CircleAvatar(
                   radius: 64,
-                  backgroundImage: NetworkImage('https://via.placeholder.com/150')
+                  backgroundColor: Colors.blue,
+                  child: Icon(Icons.person, size: 50)
                   ),
                   SizedBox(height: height * .02,),
                   Text('Persona 1', style: TextStyle(
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
                   CircleAvatar(
                   radius: 64,
                   backgroundColor: Colors.blue,
-                  backgroundImage: NetworkImage('https://via.placeholder.com/150')
+                 child: Icon(Icons.person, size: 50)
                   ),
                   SizedBox(height: height * .02,),
                   Text('Persona 2', style: TextStyle(
@@ -80,7 +81,7 @@ class MyApp extends StatelessWidget {
                   CircleAvatar(
                   radius: 64,
                   backgroundColor: Colors.blue,
-                  backgroundImage: NetworkImage('https://via.placeholder.com/150')
+                  child: Icon(Icons.person, size: 50)
                   ),
                   SizedBox(height: height * .02,),
                   Text('Persona 3', style: TextStyle(
