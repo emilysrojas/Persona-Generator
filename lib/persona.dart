@@ -16,15 +16,37 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    var height = MediaQuery.of(context).size.height;
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ListView(
+        body: Stack(
           children: [
-            CircleAvatar(
-              backgroundImage: NetworkImage('https://picsum.photos/250?image=9')
+            Center(
+              child: Column(
+                children: [
+                  SizedBox(height: height * .13,),
+                  CircleAvatar(
+                  radius: 64,
+                  backgroundColor: Colors.blue,
+                  backgroundImage: NetworkImage('https://picsum.photos/250?image=9')
+                  ),
+                  SizedBox(height: height * .02,),
+                  Text('Name', style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                  SizedBox(height: height * .02),
+                  Container(
+                    height: 300,
+                    width: 300,
+                    color: const Color.fromARGB(255, 245, 128, 34),
+                    child: Text('Description')
+                  ),
+            ],
             )
+            ),
           ],
         ),
       ),
