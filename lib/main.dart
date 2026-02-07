@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'User Persona Generator',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        // colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 245, 128, 34)),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'User Persona Generator'),
     );
   }
 }
@@ -71,23 +71,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        // Colors.amber
+        backgroundColor: const Color.fromARGB(255, 245, 128, 34),
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            fontSize: 52,
+            // fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+        // Center takes a single child and positions it in the middle of the parent
         child: Column(
           // Column is also a layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
@@ -102,20 +100,44 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: .center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
           children: [
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              child: 
+                const Text('Enter your product name and a brief description:'),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 200, vertical: 0),
+              child: 
+                TextFormField(
+              maxLines: null,
+              minLines: 5,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                    width: 3.0,
+                  ),
+                ),
+                hintText: 'Price Range',
+              ),
+            )
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 200, vertical: 20),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const SecondPage()),
+                  );
+                },
+                child: const Text('Go to second page'),
+              ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
