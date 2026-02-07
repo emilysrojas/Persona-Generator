@@ -29,16 +29,20 @@ class MyApp extends StatelessWidget {
                 children: [
                   SizedBox(height: height * .13,),
                   CircleAvatar(
-                  radius: 64,
-                  backgroundColor: Colors.blue,
-                  child: ClipOval(
-                    child: Image.network(
-                      'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1000&auto=format&fit=crop',
-                      width: 128,
-                      height: 128,
-                      fit: BoxFit.cover,
-                    )
-                  ),
+                    radius: 69,
+                    backgroundColor: Color.fromARGB(255, 245, 128, 34),
+                    child:
+                       CircleAvatar(
+                        radius: 64,
+                        child: ClipOval(
+                          child: Image.network(
+                            'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1000&auto=format&fit=crop',
+                            width: 128,
+                            height: 128,
+                            fit: BoxFit.cover,
+                          )
+                        ),
+                      ),
                   ),
                   SizedBox(height: height * .02,),
                   Text('Persona 1', style: TextStyle(
@@ -49,8 +53,11 @@ class MyApp extends StatelessWidget {
                   Container(
                     height: 300,
                     width: 200,
-                    color: const Color.fromARGB(255, 245, 128, 34),
-                    child: Text('Description')
+                    color: Colors.blue[100],
+                    child: Padding(
+                      padding: EdgeInsetsGeometry.all(15), 
+                      child: Text('Description')
+                      ),
                   ),
             ],
             )
@@ -61,16 +68,19 @@ class MyApp extends StatelessWidget {
                 children: [
                   SizedBox(height: height * .13,),
                   CircleAvatar(
-                  radius: 64,
-                  backgroundColor: Colors.blue,
-                  child: ClipOval(
-                    child: Image.network(
-                      'https://images.unsplash.com/photo-1665934955885-769a0ecac39a?q=80&w=3638&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                      width: 128,
-                      height: 128,
-                      fit: BoxFit.cover,
-                    )
-                  ),
+                    radius: 69,
+                    backgroundColor: Color.fromARGB(255, 245, 128, 34),
+                    child: CircleAvatar(
+                    radius: 64,
+                    child: ClipOval(
+                      child: Image.network(
+                        'https://images.unsplash.com/photo-1665934955885-769a0ecac39a?q=80&w=3638&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                        width: 128,
+                        height: 128,
+                        fit: BoxFit.cover,
+                      )
+                    ),
+                    ),
                   ),
                   SizedBox(height: height * .02,),
                   Text('Persona 2', style: TextStyle(
@@ -81,8 +91,11 @@ class MyApp extends StatelessWidget {
                   Container(
                     height: 300,
                     width: 200,
-                    color: const Color.fromARGB(255, 245, 128, 34),
-                    child: Text('Description')
+                    color: Colors.blue[100],
+                    child: Padding(
+                      padding: EdgeInsetsGeometry.all(15), 
+                      child: Text('Description')
+                      ),
                   ),
             ],
             )
@@ -93,17 +106,21 @@ class MyApp extends StatelessWidget {
                 children: [
                   SizedBox(height: height * .13,),
                   CircleAvatar(
-                  radius: 64,
-                  backgroundColor: Colors.blue,
-                  child: ClipOval(
-                    child: Image.network(
-                      'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg',
-                      width: 128,
-                      height: 128,
-                      fit: BoxFit.cover,
-                    )
-                  ),
-                  ),
+                    radius: 69,
+                    backgroundColor: Color.fromARGB(255, 245, 128, 34),
+                    child:
+                      CircleAvatar(
+                      radius: 64,
+                      child: ClipOval(
+                        child: Image.network(
+                          'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg',
+                          width: 128,
+                          height: 128,
+                          fit: BoxFit.cover,
+                        )
+                      ),
+                      ),
+                    ),
                   SizedBox(height: height * .02,),
                   Text('Persona 3', style: TextStyle(
                     fontSize: 22,
@@ -113,8 +130,11 @@ class MyApp extends StatelessWidget {
                   Container(
                     height: 300,
                     width: 200,
-                    color: const Color.fromARGB(255, 245, 128, 34),
-                    child: Text('Description')
+                    color: Colors.blue[100],
+                    child: Padding(
+                      padding: EdgeInsetsGeometry.all(15), 
+                      child: Text('Description')
+                      ),
                   ),
             ],
             )
