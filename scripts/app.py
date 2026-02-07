@@ -15,16 +15,16 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route("/", methods=['GET', 'POST'])
 def main():
-    # if(request.method=='POST'):
-    #     product_data=request.data
-    #     product_date=json.loads(product_data)
-    #     product_description=product_date['product']
-    #     llm=OllamaLLM(model="llama3")
-    #     response = llm(f"What type of person is more likely to buy {product_description}? Give me a name, age, gender, and a 50-80 word description of the person buying the product. Return in a json format, with no extra text.")
-    #     return ""
-    # else:
-    response={"name":"Emily"}
-    return jsonify(response)
+    if(request.method=='POST'):
+        product_data=request.data
+        product_date=json.loads(product_data)
+        product_description=product_date['product']
+        llm=OllamaLLM(model="llama3")
+        response = llm(f"What type of person is more likely to buy {product_description}? Give me a name, age, gender, and a 50-80 word description of the person buying the product. Return in a json format, with no extra text.")
+        return ""
+    else:
+    # response={"name":"Emily"}
+        return jsonify(response)
 
 
 if __name__ == "__main__":
