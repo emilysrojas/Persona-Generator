@@ -37,14 +37,6 @@ class MyApp extends StatelessWidget {
                       width: 128,
                       height: 128,
                       fit: BoxFit.cover,
-                      loadingBuilder: (context, child, loadingProgress) {
-                        if (loadingProgress == null) return child;
-                        return const CircularProgressIndicator();
-                      },
-                      // This will show an error icon IF something actually goes wrong
-                      errorBuilder: (context, error, stackTrace) {
-                        return const Icon(Icons.broken_image, size: 50, color: Colors.red);
-                      },
                     )
                   ),
                   ),
@@ -109,14 +101,6 @@ class MyApp extends StatelessWidget {
                       width: 128,
                       height: 128,
                       fit: BoxFit.cover,
-                      loadingBuilder: (context, child, loadingProgress) {
-                        if (loadingProgress == null) return child;
-                        return const CircularProgressIndicator();
-                      },
-                      // This will show an error icon IF something actually goes wrong
-                      errorBuilder: (context, error, stackTrace) {
-                        return const Icon(Icons.broken_image, size: 50, color: Colors.red);
-                      },
                     )
                   ),
                   ),
@@ -138,24 +122,6 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
-      // debugShowCheckedModeBanner: false,
-      // home: Scaffold(
-      //     body: Stack(
-      //       children: <Widget>[
-      //         Align(
-      //           alignment: Alignment.center,
-      //           child: Container(
-      //             child: Container(
-      //             height: 300,
-      //             width: 300,
-      //             color: const Color.fromARGB(255, 245, 128, 34),
-      //             child: Text(name),
-      //             ),
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //     ),
       );
   }
 }
