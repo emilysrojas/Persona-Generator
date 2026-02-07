@@ -23,24 +23,74 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Stack(
           children: [
-            Center(
+            Align(
+              alignment: Alignment(-.9, -.5),
               child: Column(
                 children: [
                   SizedBox(height: height * .13,),
                   CircleAvatar(
                   radius: 64,
-                  backgroundColor: Colors.blue,
-                  backgroundImage: NetworkImage('https://picsum.photos/250?image=9')
+                  backgroundImage: NetworkImage('https://via.placeholder.com/150')
                   ),
                   SizedBox(height: height * .02,),
-                  Text('Name', style: TextStyle(
+                  Text('Persona 1', style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),),
                   SizedBox(height: height * .02),
                   Container(
                     height: 300,
-                    width: 300,
+                    width: 200,
+                    color: const Color.fromARGB(255, 245, 128, 34),
+                    child: Text('Description')
+                  ),
+            ],
+            )
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Column(
+                children: [
+                  SizedBox(height: height * .13,),
+                  CircleAvatar(
+                  radius: 64,
+                  backgroundColor: Colors.blue,
+                  backgroundImage: NetworkImage('https://via.placeholder.com/150')
+                  ),
+                  SizedBox(height: height * .02,),
+                  Text('Persona 2', style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                  SizedBox(height: height * .02),
+                  Container(
+                    height: 300,
+                    width: 200,
+                    color: const Color.fromARGB(255, 245, 128, 34),
+                    child: Text('Description')
+                  ),
+            ],
+            )
+            ),
+            Align(
+              alignment: Alignment(.9, -.5),
+              child: Column(
+                children: [
+                  SizedBox(height: height * .13,),
+                  CircleAvatar(
+                  radius: 64,
+                  backgroundColor: Colors.blue,
+                  backgroundImage: NetworkImage('https://via.placeholder.com/150')
+                  ),
+                  SizedBox(height: height * .02,),
+                  Text('Persona 3', style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                  SizedBox(height: height * .02),
+                  Container(
+                    height: 300,
+                    width: 200,
                     color: const Color.fromARGB(255, 245, 128, 34),
                     child: Text('Description')
                   ),
