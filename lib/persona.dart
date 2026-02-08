@@ -13,7 +13,8 @@ class SecondPage extends StatelessWidget {
   Future<List<dynamic>> fetchNames() async {
     final url = Uri.parse('http://127.0.0.1:5000/');
     final response = await http.get(url);
-    return jsonDecode(response.body);
+    final decoded = jsonDecode(response.body);
+    return decoded;
   }
 
   @override
@@ -39,9 +40,9 @@ class SecondPage extends StatelessWidget {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else if (snapshot.hasData) {
               final decoded = snapshot.data!;
-              name1 = decoded[0]["name"];
-              name2 = decoded[1]["name"];
-              name3 = decoded[2]["name"];
+              name1 = decoded[0]["name"]+", "+decoded[0]["age"].toString();
+              name2 = decoded[1]["name"]+", "+decoded[1]["age"].toString();
+              name3 = decoded[2]["name"]+", "+decoded[2]["age"].toString();
               description1 = decoded[0]["description"];
               description2 = decoded[1]["description"];
               description3 = decoded[2]["description"];

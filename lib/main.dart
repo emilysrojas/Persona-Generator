@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:user_personas/persona.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 void main() {
   runApp(const MyApp());
@@ -55,7 +57,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  String product_description = "";
+  final form_key = GlobalKey<FormState>();
+
+  Future<bool> savingDescription() async {
+    final isValid = form_key.currentState?.validate() ?? false;
+
+    if (!isValid) {
+      print('not validated');
+      return false;
+    }
+    form_key.currentState!.save();
+    return true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,34 +110,48 @@ class _MyHomePageState extends State<MyHomePage> {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               child: 
-                const Text('Enter your product name and a brief description:'),
+                const Text('Enter a brief description of your product:'
+                  , style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  )),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 200, vertical: 0),
-              child: 
-                TextFormField(
-              maxLines: null,
-              minLines: 5,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.blue,
-                    width: 3.0,
+              child: Form(
+                key: form_key,
+                child: TextFormField(
+                  maxLines: null,
+                  minLines: 5,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Ex. A leather wallet that lets you store your cards and cash, but also has a built in tracker so you can find it if you lose it.',
                   ),
+                  validator: (v) => (v == null || v.trim().isEmpty) ? 'Please enter a description' : null,
+                  onSaved: (value) => product_description = value ?? '',
                 ),
-                hintText: 'Price Range',
               ),
-            )
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 200, vertical: 20),
               child: ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
+                  print('button pressed');
+                  final saved = await savingDescription();
+                  if (!saved) return;
+                  print('description saved: ' + product_description);
+
+                  final url = Uri.parse('http://127.0.0.1:5000/');
+                  final desc = jsonEncode({'product_desc': product_description});
+                  final response = await http.post(url,
+                      body: desc,
+                      headers: {'Content-Type': 'application/json'});
+
                   Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const SecondPage()),
                   );
                 },
-                child: const Text('Go to second page'),
+                child: const Text('generate personas'),
               ),
             ),
           ],

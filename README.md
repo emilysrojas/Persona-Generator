@@ -5,7 +5,7 @@ This projected was created for the 2026 She Innovates Hackathon at the Universit
 
 
 ### Technologies
-This project was built user the Flutter framework and integrates Ollama AI.
+This project was built using the Flutter framework and integrates Ollama AI using the Flask framework for Python.
 
 
 ### Authors:
