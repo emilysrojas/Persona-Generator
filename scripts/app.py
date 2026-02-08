@@ -23,7 +23,7 @@ def main():
         response = llm(f"What type of person is more likely to buy {product_description}? Give me a name, age, gender, and a 50-80 word description of the person buying the product. Return in a json format, with no extra text.")
         return ""
     else:
-    # response={"name":"Emily"}
+        response=[{"name":"Emily", "description":"A baker blah blah blah blah blah blah blah"}, {"name":"Jennifer", "description":"she has a j*b blah blah blah blah blah blah blah"}, {"name":"Sam", "description":"A chef blah blah blah blah blah blah blah"}]
         return jsonify(response)
 
 
