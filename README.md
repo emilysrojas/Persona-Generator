@@ -10,5 +10,7 @@ This project was built user the Flutter framework and integrates Ollama AI.
 
 ### Authors:
 Samantha Demas
+
 Emily Rojas
+
 Jennifer Zhang
