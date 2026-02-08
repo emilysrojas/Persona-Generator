@@ -35,10 +35,10 @@ def main():
         print(response)
         print(type(response))
         response=json.loads(response)
-        old=[{"name":"Emily", "description":"A baker blah blah blah blah blah blah blah"}, {"name":"Jennifer", "description":"she has a j*b blah blah blah blah blah blah blah"}, {"name":"Sam", "description":"A chef blah blah blah blah blah blah blah"}]
+        # old=[{"name":"Emily", "description":"A baker blah blah blah blah blah blah blah"}, {"name":"Jennifer", "description":"she has a j*b blah blah blah blah blah blah blah"}, {"name":"Sam", "description":"A chef blah blah blah blah blah blah blah"}]
 
-        print("new "+str(type(response)))
-        print("old "+str(type(old)))
+        print(str(type(response)))
+        # print("old "+str(type(old)))
 
         return ""
     else:
