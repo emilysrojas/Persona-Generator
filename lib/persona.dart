@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:user_personas/main.dart';
 
 void main(){
-  runApp(const MyApp());
+  runApp(const SecondPage());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
 
   Future<List<dynamic>> fetchNames() async {
     final url = Uri.parse('http://127.0.0.1:5000/');
